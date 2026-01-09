@@ -27,6 +27,7 @@ html {
     font-size: 62.5%;
 }
 
+
 header,
 .header__title-container {
     position: relative;
@@ -101,4 +102,129 @@ header {
             align-items: center;
         }
     }
+}
+
+#tasas__cambio-container {
+    background-color: var(--off-White);
+    padding-block: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .tasas__bitcoin-img {
+        width: 240px;
+        height: 240px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    div {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        h2 {
+            color: var(--warm-Black);
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 26px;
+            text-align: center;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 18px;
+            text-align: center;
+            color: var(--gray);
+        }
+    }
+
+    #tasas__comisiones-container,
+    #tasas__monedas-container {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        h3 {
+            color: var(--secondary-blue);
+            font-weight: 700;
+            font-size: 1.8rem;
+            line-height: 100%;
+        }
+
+        .comisiones__table {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            background-color: var(--White);
+            padding: 1.4rem;
+            border-radius: 8px;
+            width: 200px;
+            align-self: center;
+
+            .comisiones__column {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                p {
+                    margin: 0;
+                    font-size: 1.4rem;
+                    color: rgba(181, 176, 172, 1);
+                }
+            }
+
+            .comisiones__column:last-child p {
+                text-align: right;
+                color: var(--gray);
+                font-weight: 600;
+            }
+        }
+
+
+        span.comisiones__updated {
+            font-family: Inter;
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 100%;
+            text-align: center;
+            display: inline-block;
+            width: 90%;
+            background-color: var(--soft-blue);
+            padding: 8px 6px;
+            border-radius: 8px;
+            align-self: center;
+
+            span {
+                font-weight: 400;
+                font-size: 1.2rem;
+            }
+        }
+
+    }
+
+    #tasas__monedas-container {
+        h3 {
+            color: var(--orange-text);
+        }
+
+        span.comisiones__updated {
+            background-color: var(--soft-orange);
+        }
+
+        .comisiones__column:last-child p:after {
+            content: url(./assets/icons/trending-down\ 1.svg);
+            padding-inline-start: 8px;
+        }
+
+        .comisiones__column:last-child p.trending__up:after {
+            content: url(./assets/icons/trending-up-1.svg);
+            padding-inline-start: 8px;
+        }
+    }
+
 }
