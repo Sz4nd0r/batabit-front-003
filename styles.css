@@ -50,7 +50,7 @@ header,
         font-family: DM Sans;
         font-weight: 700;
         font-size: 2.4rem;
-        line-height: 26px;
+        line-height: 2.6rem;
         letter-spacing: 0%;
         text-align: center;
         color: var(--White);
@@ -60,7 +60,7 @@ header,
         font-family: DM Sans;
         font-weight: 500;
         font-size: 1.4rem;
-        line-height: 18px;
+        line-height: 1.8rem;
         letter-spacing: 0%;
         text-align: center;
         color: var(--soft-orange);
@@ -130,14 +130,14 @@ header {
             color: var(--warm-Black);
             font-weight: 700;
             font-size: 2.4rem;
-            line-height: 26px;
+            line-height: 2.6rem;
             text-align: center;
         }
 
         p {
             font-weight: 500;
             font-size: 1.4rem;
-            line-height: 18px;
+            line-height: 1.8rem;
             text-align: center;
             color: var(--gray);
         }
@@ -156,40 +156,58 @@ header {
             line-height: 100%;
         }
 
-        .comisiones__table {
+        .main__table {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            background-color: var(--White);
-            padding: 1.4rem;
+            gap: 1px;
             border-radius: 8px;
-            width: 200px;
+            width: 204px;
             align-self: center;
+            place-items: center;
 
-            .comisiones__column {
+            .table__column {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 1px;
+                width: 100%;
 
                 p {
                     margin: 0;
                     font-size: 1.4rem;
                     color: rgba(181, 176, 172, 1);
+                    background-color: var(--White);
+                    padding: 8px 6px;
+                    text-align: center;
+                }
+
+                .up-left {
+                    border-radius: 10px 0 0 0;
+                }
+
+                .up-right {
+                    border-radius: 0 10px 0 0;
+                }
+
+                .down-right {
+                    border-radius: 0 0 10px 0;
+                }
+
+                .down-left {
+                    border-radius: 0 0 0 10px;
                 }
             }
 
-            .comisiones__column:last-child p {
-                text-align: right;
+            .table__column:last-child p {
                 color: var(--gray);
                 font-weight: 600;
             }
         }
 
 
-        span.comisiones__updated {
+        span.table__updated {
             font-family: Inter;
             font-weight: 700;
-            font-size: 12px;
+            font-size: 1.2rem;
             line-height: 100%;
             text-align: center;
             display: inline-block;
@@ -212,19 +230,92 @@ header {
             color: var(--orange-text);
         }
 
-        span.comisiones__updated {
+        span.table__updated {
             background-color: var(--soft-orange);
         }
 
-        .comisiones__column:last-child p:after {
+        .table__column:last-child p:after {
             content: url(./assets/icons/trending-down\ 1.svg);
             padding-inline-start: 8px;
         }
 
-        .comisiones__column:last-child p.trending__up:after {
+        .table__column:last-child p.trending__up:after {
             content: url(./assets/icons/trending-up-1.svg);
             padding-inline-start: 8px;
         }
     }
 
+}
+
+#benefits__container {
+    background-color: var(--warm-Black);
+    color: var(--White);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-block: 60px 40px;
+
+    img[alt="Batata"] {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -12px;
+    }
+
+    .benefits__title-container {
+        width: 90%;
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 2.6rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            font-family: DM Sans;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            text-align: center;
+            color: rgba(128, 128, 128, 1);
+        }
+    }
+
+    .benefits__cards-container {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+        .benefits__card {
+            background-color: var(--warmer-Black);
+            box-shadow: var(--black-shadow);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 16px;
+            gap: 12px;
+            border-radius: 4px;
+
+            img {
+                width: 24px;
+            }
+
+            h3 {
+                font-weight: 700;
+                font-size: 1.8rem;
+                line-height: 1.8rem;
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                color: rgba(128, 128, 128, 1);
+            }
+        }
+    }
 }
