@@ -47,21 +47,17 @@ header,
     }
 
     h1 {
-        font-family: DM Sans;
         font-weight: 700;
         font-size: 2.4rem;
         line-height: 2.6rem;
-        letter-spacing: 0%;
         text-align: center;
         color: var(--White);
     }
 
     p {
-        font-family: DM Sans;
         font-weight: 500;
         font-size: 1.4rem;
         line-height: 1.8rem;
-        letter-spacing: 0%;
         text-align: center;
         color: var(--soft-orange);
     }
@@ -318,4 +314,173 @@ header {
             }
         }
     }
+}
+
+#conocelo__hoy {
+    background-image: url(./assets/images/bitcoinbaby-girl1.png);
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    height: 400px;
+
+    h2 {
+        position: absolute;
+        top: 17.4%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 700;
+        font-size: 2.4rem;
+        line-height: 2.6rem;
+        text-align: center;
+        color: var(--White);
+    }
+}
+
+#planes {
+    overflow-x: visible;
+    position: relative;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block: 40px;
+    gap: 28px;
+    background-color: var(--off-White);
+
+    .planes__title-container {
+        width: 90%;
+
+        h2 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 2.6rem;
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 1.8rem;
+            text-align: center;
+            color: var(--gray);
+        }
+    }
+
+    .planes__cards-container {
+        display: flex;
+        gap: 20px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding-block: 28px;
+        padding-inline: 16px;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        scroll-padding-inline: 16px;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(181, 176, 172, 0.4) transparent;
+
+        .card {
+            background-color: var(--White);
+            width: 200px;
+            height: 254px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: var(--white-shadow);
+            position: relative;
+            padding: 16px 12px;
+
+            h3 {
+                font-weight: 500;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                margin-top: 18px;
+            }
+
+            .price {
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 50%;
+                text-align: center;
+                display: flex;
+
+                span {
+                    font-weight: 700;
+                    font-size: 5.2rem;
+                    line-height: 90%;
+                }
+            }
+
+            .save {
+                font-family: Inter;
+                font-weight: 500;
+                font-size: 1.2rem;
+                line-height: 100%;
+                text-align: center;
+                width: 90%;
+                color: var(--gray);
+            }
+
+            button {
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                padding: 12px 16px;
+                border: 2px solid var(--bitcoin-orange);
+                border-radius: 4px;
+                font-weight: 700;
+                font-size: 1.4rem;
+                line-height: 100%;
+                text-align: center;
+                color: var(--warm-Black);
+            }
+
+            .recomendado__tag {
+                position: absolute;
+                top: -16px;
+                background-color: var(--bitcoin-orange);
+                color: var(--White);
+                padding: 12px 8px;
+                border-radius: 8px;
+                font-family: Inter;
+                font-weight: 700;
+                font-size: 1.2rem;
+                line-height: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+/*Scroll functionality*/
+.planes__cards-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    scroll-padding-inline: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(181, 176, 172, 0.4) transparent;
+    width: 100%;
+}
+
+.planes__cards-container .card {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+.planes__cards-container::-webkit-scrollbar {
+    height: 10px;
+}
+
+.planes__cards-container::-webkit-scrollbar-thumb {
+    background: rgba(181, 176, 172, 0.4);
+    border-radius: 999px;
 }
