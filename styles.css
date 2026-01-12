@@ -21,6 +21,68 @@
     --linear-BG: linear-gradient(207.8deg, var(--warm-Black) 16.69%, var(--bitcoin-orange) 100%);
 }
 
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate-reverse {
+    0% {
+        transform: rotate(-0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    2% {
+        transform: rotate(5deg);
+    }
+
+    4% {
+        transform: rotate(0deg);
+    }
+
+    6% {
+        transform: rotate(-5deg);
+    }
+
+    8% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(5deg);
+    }
+
+    12% {
+        transform: rotate(0deg);
+    }
+
+    14% {
+        transform: rotate(-5deg);
+    }
+
+    16% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
 html {
     scroll-behavior: smooth;
     font-family: 'DM sans', sans-serif;
@@ -108,6 +170,8 @@ header {
     align-items: center;
     gap: 40px;
 
+
+
     .tasas__bitcoin-img {
         width: max(240px, 44vw);
         height: max(240px, 44vw);
@@ -116,6 +180,43 @@ header {
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        position: relative;
+
+        .circling__imgs-container {
+            position: absolute;
+            width: max(52px, 20vw);
+            height: max(52px, 20vw);
+            top: calc(50% - max(26px, 10vw));
+            left: calc(50% - max(26px, 10vw) - 9px);
+            animation: rotate 8s linear 0s infinite forwards;
+            transform-origin: center;
+
+            img {
+                position: absolute;
+                width: 48px;
+                animation: rotate-reverse 8s linear 0s infinite backwards;
+            }
+
+            img[alt="eye"] {
+                top: 0;
+                left: 0;
+            }
+
+            img[alt="check"] {
+                top: 0;
+                right: 0;
+            }
+
+            img[alt="dollar"] {
+                bottom: 0;
+                left: 0;
+            }
+
+            img[alt="clock"] {
+                bottom: 0;
+                right: 0;
+            }
+        }
     }
 
     div.tasas__title-container {
@@ -325,6 +426,7 @@ header {
         width: 90%;
         display: flex;
         flex-direction: column;
+        align-items: center;
         gap: 18px;
 
         .benefits__card {
@@ -335,6 +437,7 @@ header {
             padding: 20px 16px;
             gap: 12px;
             border-radius: 4px;
+            width: min(100%, 800px);
 
             img {
                 width: 24px;
@@ -429,6 +532,7 @@ header {
             box-shadow: var(--white-shadow);
             position: relative;
             padding: 16px 12px;
+            transition: all 0.2s ease-out;
 
             h3 {
                 font-weight: 500;
@@ -474,6 +578,16 @@ header {
                 line-height: 100%;
                 text-align: center;
                 color: var(--warm-Black);
+                cursor: pointer;
+
+                img {
+                    transition: all 0.3s ease-in-out;
+                }
+            }
+
+            button:hover img {
+                transform: translateX(22px);
+                opacity: 0;
             }
 
             .recomendado__tag {
@@ -488,7 +602,12 @@ header {
                 font-size: 1.2rem;
                 line-height: 100%;
                 text-align: center;
+                animation: shake 2s linear 2s infinite forwards;
             }
+        }
+
+        .card:hover {
+            transform: scale(1.05) translateY(-4px);
         }
     }
 }
