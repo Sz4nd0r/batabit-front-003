@@ -28,47 +28,49 @@
     <main>
         <section id="tasas__cambio-container">
             <div class="tasas__bitcoin-img" style="background-image: url(./assets/images/bitcoin.svg);"></div>
-            <div>
+            <div class="tasas__title-container">
                 <h2>Visibilizamos todas las tasas de cambio.</h2>
                 <p>Traemos información en tiempo real de las casas de cambio y las monedas más importantes del mundo.
                 </p>
             </div>
-            <section id="tasas__comisiones-container">
-                <h3>Comisiones</h3>
-                <div class="main__table">
-                    <div class="table__column">
-                        <p class="up-left">Bitrade</p>
-                        <p>Bitpreco</p>
-                        <p>Novadax</p>
-                        <p class="down-left">Coinext</p>
+            <div class="tables__slides-container">
+                <section id="tasas__comisiones-container">
+                    <h3>Comisiones</h3>
+                    <div class="main__table">
+                        <div class="table__column">
+                            <p class="up-left">Bitrade</p>
+                            <p>Bitpreco</p>
+                            <p>Novadax</p>
+                            <p class="down-left">Coinext</p>
+                        </div>
+                        <div class="table__column">
+                            <p class="up-right">$12.96</p>
+                            <p>$13.07</p>
+                            <p>$13.15</p>
+                            <p class="down-right">$14.96</p>
+                        </div>
                     </div>
-                    <div class="table__column">
-                        <p class="up-right">$12.96</p>
-                        <p>$13.07</p>
-                        <p>$13.15</p>
-                        <p class="down-right">$14.96</p>
+                    <span class="table__updated">Actualizado: <span>19 Julio 23:48</span></span>
+                </section>
+                <section id="tasas__monedas-container">
+                    <h3>Monedas</h3>
+                    <div class="main__table">
+                        <div class="table__column">
+                            <p class="up-left">Bitcoin</p>
+                            <p>Ethereum</p>
+                            <p>Ripple</p>
+                            <p class="down-left">Stellar</p>
+                        </div>
+                        <div class="table__column">
+                            <p class="up-right">$ 1.96</p>
+                            <p class="trending__up">$ 0.07</p>
+                            <p>$ 2.15</p>
+                            <p class="down-right">$ 4.96</p>
+                        </div>
                     </div>
-                </div>
-                <span class="table__updated">Actualizado: <span>19 Julio 23:48</span></span>
-            </section>
-            <section id="tasas__monedas-container">
-                <h3>Monedas</h3>
-                <div class="main__table">
-                    <div class="table__column">
-                        <p class="up-left">Bitcoin</p>
-                        <p>Ethereum</p>
-                        <p>Ripple</p>
-                        <p class="down-left">Stellar</p>
-                    </div>
-                    <div class="table__column">
-                        <p class="up-right">$ 1.96</p>
-                        <p class="trending__up">$ 0.07</p>
-                        <p>$ 2.15</p>
-                        <p class="down-right">$ 4.96</p>
-                    </div>
-                </div>
-                <span class="table__updated">Actualizado: <span>19 Julio 23:45</span></span>
-            </section>
+                    <span class="table__updated">Actualizado: <span>19 Julio 23:45</span></span>
+                </section>
+            </div>
         </section>
         <section id="benefits__container">
             <img src="./assets/images/batata-group-16.svg" alt="Batata">
@@ -142,7 +144,18 @@
             </div>
         </section>
     </main>
-    <footer></footer>
+    <footer>
+        <address>
+            <ul>
+                <li><a href="#">Linkedin</a></li>
+                <li><a href="#">Hackernews</a></li>
+                <li><a href="#">Crunchbase</a></li>
+            </ul>
+        </address>
+        <div>
+            <img src="./assets/images/batata-footer.svg" alt="batata-footer">
+        </div>
+    </footer>
 </body>
 
 </html>
