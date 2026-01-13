@@ -184,17 +184,17 @@ header {
 
         .circling__imgs-container {
             position: absolute;
-            width: max(52px, 20vw);
-            height: max(52px, 20vw);
-            top: calc(50% - max(26px, 10vw));
-            left: calc(50% - max(26px, 10vw) - 9px);
-            animation: rotate 8s linear 0s infinite forwards;
+            width: max(200px, 30vw);
+            height: max(200px, 30vw);
+            top: calc(50% - max(100px, 15vw));
+            left: calc(50% - max(100px, 15vw) - 9px);
+            animation: rotate 20s linear 0s infinite forwards;
             transform-origin: center;
 
             img {
                 position: absolute;
                 width: 48px;
-                animation: rotate-reverse 8s linear 0s infinite backwards;
+                animation: rotate-reverse 20s linear 0s infinite backwards;
             }
 
             img[alt="eye"] {
