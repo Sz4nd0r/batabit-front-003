@@ -1,4 +1,269 @@
-body {
-  background-color: red; }
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+@keyframes rotate-reverse {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(-360deg); } }
+@keyframes shake {
+  0% {
+    transform: rotate(0deg); }
+  2% {
+    transform: rotate(5deg); }
+  4% {
+    transform: rotate(0deg); }
+  6% {
+    transform: rotate(-5deg); }
+  8% {
+    transform: rotate(0deg); }
+  10% {
+    transform: rotate(5deg); }
+  12% {
+    transform: rotate(0deg); }
+  14% {
+    transform: rotate(-5deg); }
+  16% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(0deg); } }
+html {
+  scroll-behavior: smooth;
+  font-family: "DM sans", sans-serif;
+  font-size: 62.5%; }
+
+.header__title-container, header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; }
+
+.header__title-container {
+  width: min(90%, 440px);
+  gap: 30px;
+  top: 24px; }
+  .header__title-container a {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #201e1c;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0px 4px 8px 0px rgba(89, 73, 30, 0.16);
+    width: min(80%, 300px); }
+
+header {
+  padding: 8px;
+  background-image: var(--linear-BG); }
+  header img[alt="Batabit logo"] {
+    margin-block: 40px 20px; }
+  header h1 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    color: white; }
+  header p {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #ffe9d4; }
+
+#tasas__cambio-container {
+  background-color: #faf8f7;
+  padding-block: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  gap: 40px; }
+  #tasas__cambio-container .tasas__bitcoin-img {
+    width: clamp(240px, 44vw, 600px);
+    height: clamp(240px, 44vw, 600px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative; }
+
+.circling__imgs-container {
+  position: absolute;
+  width: max(200px, 30vw);
+  height: max(200px, 30vw);
+  top: calc(50% - max(200px, 30vw) / 2);
+  left: calc(50% - max(200px, 30vw) / 2 - 9px);
+  animation: rotate 20s linear 0s infinite forwards;
+  transform-origin: center; }
+  .circling__imgs-container img {
+    position: absolute;
+    width: 48px;
+    animation: rotate-reverse 20s linear 0s infinite backwards; }
+  .circling__imgs-container img[alt="eye"] {
+    top: 0;
+    left: 0; }
+  .circling__imgs-container img[alt="check"] {
+    top: 0;
+    right: 0; }
+  .circling__imgs-container img[alt="dollar"] {
+    bottom: 0;
+    left: 0; }
+  .circling__imgs-container img[alt="clock"] {
+    bottom: 0;
+    right: 0; }
+
+div.tasas__title-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px; }
+  div.tasas__title-container h2 {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    color: #201e1c; }
+  div.tasas__title-container p {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: #757575; }
+
+.tables__slides-container {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  padding-inline: 94px;
+  gap: 60px; }
+
+#tasas__comisiones-container,
+#tasas__monedas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; }
+  #tasas__comisiones-container h3,
+  #tasas__monedas-container h3 {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    color: #1a9af7;
+    transform: translateX(-50px); }
+  #tasas__comisiones-container .main__table,
+  #tasas__monedas-container .main__table {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    border-radius: 8px;
+    width: 204px;
+    place-items: center; }
+    #tasas__comisiones-container .main__table .table__column,
+    #tasas__monedas-container .main__table .table__column {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      width: 100%; }
+      #tasas__comisiones-container .main__table .table__column p,
+      #tasas__monedas-container .main__table .table__column p {
+        font-family: DM Sans;
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 1.8rem;
+        text-align: center;
+        color: #282623;
+        background-color: var(--White);
+        padding: 8px 6px; }
+        #tasas__comisiones-container .main__table .table__column p .up-left,
+        #tasas__monedas-container .main__table .table__column p .up-left {
+          border-radius: 10px 0 0 0; }
+        #tasas__comisiones-container .main__table .table__column p .up-right,
+        #tasas__monedas-container .main__table .table__column p .up-right {
+          border-radius: 0 10px 0 0; }
+        #tasas__comisiones-container .main__table .table__column p .down-right,
+        #tasas__monedas-container .main__table .table__column p .down-right {
+          border-radius: 0 0 10px 0; }
+        #tasas__comisiones-container .main__table .table__column p .down-left,
+        #tasas__monedas-container .main__table .table__column p .down-left {
+          border-radius: 0 0 0 10px; }
+      #tasas__comisiones-container .main__table .table__column .table__column:last-child p,
+      #tasas__monedas-container .main__table .table__column .table__column:last-child p {
+        color: var(--gray);
+        font-weight: 600; }
+  #tasas__comisiones-container span.table__updated,
+  #tasas__monedas-container span.table__updated {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 1.2rem;
+    line-height: 100%;
+    text-align: center;
+    display: inline-block;
+    width: 180px;
+    background-color: var(--soft-blue);
+    padding: 8px 6px;
+    border-radius: 8px; }
+    #tasas__comisiones-container span.table__updated span,
+    #tasas__monedas-container span.table__updated span {
+      font-weight: 400;
+      font-size: 1.2rem; }
+  #tasas__comisiones-container #tasas__monedas-container h3,
+  #tasas__monedas-container #tasas__monedas-container h3 {
+    color: var(--orange-text); }
+  #tasas__comisiones-container #tasas__monedas-container span.table__updated,
+  #tasas__monedas-container #tasas__monedas-container span.table__updated {
+    background-color: var(--soft-orange); }
+  #tasas__comisiones-container #tasas__monedas-container .table__column:last-child p:after,
+  #tasas__monedas-container #tasas__monedas-container .table__column:last-child p:after {
+    content: url(./assets/icons/trending-down\ 1.svg);
+    padding-inline-start: 8px; }
+  #tasas__comisiones-container #tasas__monedas-container .table__column:last-child p.trending__up:after,
+  #tasas__monedas-container #tasas__monedas-container .table__column:last-child p.trending__up:after {
+    content: url(./assets/icons/trending-up-1.svg);
+    padding-inline-start: 8px; }
+
+.slides__container-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+
+.tables__slides-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(181, 176, 172, 0.4) transparent;
+  width: 100%; }
+  .tables__slides-container section {
+    flex: 0 0 auto;
+    scroll-snap-align: center; }
+  .tables__slides-container::-webkit-scrollbar {
+    height: 10px; }
+  .tables__slides-container::-webkit-scrollbar-thumb {
+    background: rgba(181, 176, 172, 0.4);
+    border-radius: 999px; }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,3 +1,310 @@
-$color: red
-body
-    background-color: $color
+$warm-Black: rgba(32, 30, 28, 1)
+$warmer-Black: rgba(40, 38, 35, 1)
+$bitcoin-orange: rgba(247, 147, 26, 1)
+$orange-text: rgba(255, 149, 54, 1)
+$secondary-blue: rgba(26, 154, 247, 1)
+$soft-orange: rgba(255, 233, 212, 1)
+$soft-blue: rgba(231, 245, 255, 1)
+$soft-orange: rgba(255, 233, 212, 1)
+$gray: rgba(117, 117, 117, 1)
+$White: rgba(255, 255, 255, 1)
+$off-White: rgba(250, 248, 247, 1)
+$white-shadow: 0px 4px 8px 0px rgba(89, 73, 30, 0.16)
+$black-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.16)
+$linear-BG: linear-gradient(207.8deg, var($warm-Black) 16.69%, var($bitcoin-orange) 100%)
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+@keyframes rotate
+    0%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(360deg)
+
+@keyframes rotate-reverse
+    0%
+        transform: rotate(-0deg)
+
+    100%
+        transform: rotate(-360deg)
+
+@keyframes shake
+    0%
+        transform: rotate(0deg)
+
+    2%
+        transform: rotate(5deg)
+
+    4%
+        transform: rotate(0deg)
+
+    6%
+        transform: rotate(-5deg)
+
+    8%
+        transform: rotate(0deg)
+
+    10%
+        transform: rotate(5deg)
+
+    12%
+        transform: rotate(0deg)
+
+    14%
+        transform: rotate(-5deg)
+
+    16%
+        transform: rotate(0deg)
+
+    100%
+        transform: rotate(0deg)
+
+html
+    scroll-behavior: smooth
+    font-family: 'DM sans', sans-serif
+    font-size: 62.5%
+
+@mixin typographyp($font: DM Sans, $color: $warm-Black)
+    font-family: $font
+    font-weight: 500
+    font-size: 1.4rem
+    line-height: 1.8rem
+    text-align: center
+    color: $color
+
+@mixin typography2($font: DM Sans, $color: $warm-Black)
+    font-family: $font
+    font-weight: 700
+    font-size: 2.4rem
+    line-height: 2.6rem
+    text-align: center
+    color: $color
+
+@mixin typography3($font: DM Sans, $color: $warm-Black)
+    font-family: $font
+    font-weight: 700
+    font-size: 1.8rem
+    line-height: 1.8rem
+    color: $color
+
+@mixin typography1($font: DM Sans, $color: $White)
+    font-weight: 700
+    font-size: 2.4rem
+    line-height: 2.6rem
+    text-align: center
+    color: $color
+
+@mixin flex-col($direction: row)
+    display: flex
+    flex-direction: $direction
+    align-items: center
+    justify-content: center
+
+%header-positioning
+    position: relative
+    @include  flex-col($direction: column)
+    width: 100%
+
+.header__title-container
+    @extend %header-positioning
+    width: min(90%, 440px)
+    gap: 30px
+    top: 24px
+
+    a
+        @include typographyp()
+        font-weight: 700
+        text-decoration: none
+        padding: 8px
+        border-radius: 4px
+        @include flex-col()
+        background-color: $White
+        box-shadow: $white-shadow
+        width: min(80%, 300px)
+
+        span
+            @mixin flex-col()
+
+header
+    @extend %header-positioning
+    padding: 8px
+    background-image: var(--linear-BG)
+
+    img[alt="Batabit logo"]
+        margin-block: 40px 20px
+
+    h1
+        @include typography1()
+
+    p
+        @include typographyp($font: DM Sans, $color: $soft-orange)
+
+#tasas__cambio-container
+    background-color: $off-White
+    padding-block: 40px
+    @include flex-col($direction: column)
+    justify-content: flex-start
+    gap: 40px
+
+    .tasas__bitcoin-img
+        $square: clamp(240px, 44vw, 600px)
+        width: $square
+        height: $square
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center
+        position: relative
+
+.circling__imgs-container
+    $side: max(200px, 30vw)
+    position: absolute
+    width: $side
+    height: $side
+    top: calc(50% - #{$side} / 2)
+    left: calc(50% - #{$side} / 2 - 9px)
+    animation: rotate 20s linear 0s infinite forwards
+    transform-origin: center
+
+    img
+        position: absolute
+        width: 48px
+        animation: rotate-reverse 20s linear 0s infinite backwards
+
+    img[alt="eye"]
+        top: 0
+        left: 0
+
+    img[alt="check"]
+        top: 0
+        right: 0
+
+    img[alt="dollar"]
+        bottom: 0
+        left: 0
+
+    img[alt="clock"]
+        bottom: 0
+        right: 0
+
+div.tasas__title-container
+    width: 90%
+    display: flex
+    flex-direction: column
+    gap: 24px
+
+    h2
+        @include typography2()
+
+    p
+        @include typographyp($font: DM Sans, $color: $gray)
+
+.tables__slides-container
+    display: flex
+    flex-direction: row-reverse
+    justify-content: flex-start
+    padding-inline: 94px
+    gap: 60px
+
+#tasas__comisiones-container,
+#tasas__monedas-container
+    @include flex-col($direction: column)
+    gap: 12px
+
+    h3
+        @include typography3($font: DM Sans, $color: $secondary-blue)
+        transform: translateX(-50px)
+
+    .main__table
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 1px
+        border-radius: 8px
+        width: 204px
+        place-items: center
+
+        .table__column
+            display: flex
+            flex-direction: column
+            gap: 1px
+            width: 100%
+
+            p
+                @include typographyp($font: DM Sans, $color: $warmer-Black)
+                background-color: var(--White)
+                padding: 8px 6px
+
+                .up-left
+                    border-radius: 10px 0 0 0
+
+                .up-right
+                    border-radius: 0 10px 0 0
+
+                .down-right
+                    border-radius: 0 0 10px 0
+
+                .down-left
+                    border-radius: 0 0 0 10px
+
+            .table__column:last-child p
+                color: var(--gray)
+                font-weight: 600
+
+    span.table__updated
+        font-family: Inter
+        font-weight: 700
+        font-size: 1.2rem
+        line-height: 100%
+        text-align: center
+        display: inline-block
+        width: 180px
+        background-color: var(--soft-blue)
+        padding: 8px 6px
+        border-radius: 8px
+
+        span
+            font-weight: 400
+            font-size: 1.2rem
+
+    #tasas__monedas-container
+        h3
+            color: var(--orange-text)
+
+        span.table__updated
+            background-color: var(--soft-orange)
+
+        .table__column:last-child p:after
+            content: url(./assets/icons/trending-down\ 1.svg)
+            padding-inline-start: 8px
+
+        .table__column:last-child p.trending__up:after
+            content: url(./assets/icons/trending-up-1.svg)
+            padding-inline-start: 8px
+
+.slides__container-container
+    width: 100%
+    display: flex
+    justify-content: center
+
+.tables__slides-container
+    overflow-x: auto
+    overscroll-behavior-x: contain
+    scroll-snap-type: x proximity
+    scroll-padding-inline: 16px
+    scrollbar-width: thin
+    scrollbar-color: rgba(181, 176, 172, 0.4) transparent
+    width: 100%
+
+    & section
+        flex: 0 0 auto
+        scroll-snap-align: center
+
+    &::-webkit-scrollbar
+        height: 10px
+
+    &::-webkit-scrollbar-thumb
+        background: rgba(181, 176, 172, 0.4)
+        border-radius: 999px
