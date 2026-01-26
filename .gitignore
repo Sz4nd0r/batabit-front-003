@@ -1,3 +1,6 @@
 .sass-cache/
 *.css.map
-*.log
+*.sass.map
+*.scss.map
+
+# End of https://mrkandreev.name/snippets/gitignore-generator/#Sass

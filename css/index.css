@@ -72,7 +72,7 @@ html {
 
 header {
   padding: 8px;
-  background-image: var(--linear-BG); }
+  background-image: linear-gradient(207.8deg, var(#201e1c) 16.69%, var(#f7931a) 100%); }
   header img[alt="Batabit logo"] {
     margin-block: 40px 20px; }
   header h1 {
@@ -222,7 +222,7 @@ div.tasas__title-container {
     text-align: center;
     display: inline-block;
     width: 180px;
-    background-color: var(--soft-blue);
+    background-color: #e7f5ff;
     padding: 8px 6px;
     border-radius: 8px; }
     #tasas__comisiones-container span.table__updated span,
@@ -231,10 +231,10 @@ div.tasas__title-container {
       font-size: 1.2rem; }
   #tasas__comisiones-container #tasas__monedas-container h3,
   #tasas__monedas-container #tasas__monedas-container h3 {
-    color: var(--orange-text); }
+    color: #ff9536; }
   #tasas__comisiones-container #tasas__monedas-container span.table__updated,
   #tasas__monedas-container #tasas__monedas-container span.table__updated {
-    background-color: var(--soft-orange); }
+    background-color: #ffe9d4; }
   #tasas__comisiones-container #tasas__monedas-container .table__column:last-child p:after,
   #tasas__monedas-container #tasas__monedas-container .table__column:last-child p:after {
     content: url(./assets/icons/trending-down\ 1.svg);
@@ -265,5 +265,247 @@ div.tasas__title-container {
   .tables__slides-container::-webkit-scrollbar-thumb {
     background: rgba(181, 176, 172, 0.4);
     border-radius: 999px; }
+
+#benefits__container {
+  background-color: #201e1c;
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 20px;
+  padding-block: 60px 40px; }
+  #benefits__container img[alt="Batata"] {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -12px; }
+
+.benefits__title-container {
+  width: 90%; }
+  .benefits__title-container h2 {
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    color: #201e1c;
+    margin-bottom: 2rem; }
+  .benefits__title-container p {
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: gray; }
+
+.benefits__cards-container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px; }
+
+.benefits__card {
+  background-color: #282623;
+  box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.16);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px;
+  gap: 12px;
+  border-radius: 4px;
+  width: min(100%, 800px); }
+  .benefits__card img {
+    width: 24px; }
+    .benefits__card img h3 {
+      font-family: DM Sans;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+      color: #201e1c; }
+    .benefits__card img p {
+      font-family: DM Sans;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      text-align: center;
+      color: gray; }
+
+#conocelo__hoy {
+  background-image: url(./assets/images/bitcoinbaby-girl1.png);
+  width: 100%;
+  background-size: max(400px, 40vw);
+  background-color: #282623;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  height: max(30vw, 400px); }
+  #conocelo__hoy h2 {
+    position: absolute;
+    top: 17.4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: DM Sans;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-align: center;
+    color: white; }
+
+#planes {
+  overflow-x: visible;
+  position: relative;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 40px;
+  gap: 28px;
+  background-color: #faf8f7; }
+  #planes .planes__title-container {
+    width: 90%; }
+    #planes .planes__title-container h2 {
+      font-family: DM Sans;
+      font-weight: 700;
+      font-size: 2.4rem;
+      line-height: 2.6rem;
+      text-align: center;
+      color: #201e1c;
+      margin-bottom: 2.4rem; }
+    #planes .planes__title-container p {
+      font-family: DM Sans;
+      font-weight: 500;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+      text-align: center;
+      color: #757575; }
+
+.planes__cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+  padding-block: 28px;
+  padding-inline: 66px; }
+  .planes__cards-container .card {
+    background-color: white;
+    width: 200px;
+    height: 254px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px 0px rgba(89, 73, 30, 0.16);
+    position: relative;
+    padding: 16px 12px;
+    transition: all 0.2s ease-out; }
+    .planes__cards-container .card h3 {
+      font-family: DM Sans;
+      font-weight: 700;
+      font-size: 1.8rem;
+      line-height: 1.8rem;
+      color: #201e1c;
+      margin-top: 18px; }
+    .planes__cards-container .card .price {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 50%;
+      text-align: center;
+      display: flex; }
+      .planes__cards-container .card .price span {
+        font-weight: 700;
+        font-size: 5.2rem;
+        line-height: 90%; }
+    .planes__cards-container .card .save {
+      font-family: Inter;
+      font-weight: 500;
+      font-size: 1.2rem;
+      line-height: 100%;
+      text-align: center;
+      width: 90%;
+      color: #757575; }
+    .planes__cards-container .card button {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 16px;
+      border: 2px solid #f7931a;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 1.4rem;
+      line-height: 100%;
+      text-align: center;
+      color: #201e1c;
+      cursor: pointer; }
+      .planes__cards-container .card button img {
+        transition: all 0.3s ease-in-out; }
+    .planes__cards-container .card button:hover img {
+      transform: translateX(22px);
+      opacity: 0; }
+    .planes__cards-container .card .recomendado__tag {
+      position: absolute;
+      top: -16px;
+      background-color: #f7931a;
+      color: white;
+      padding: 12px 8px;
+      border-radius: 8px;
+      font-family: Inter;
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 100%;
+      text-align: center;
+      animation: shake 2s linear 2s infinite forwards; }
+  .planes__cards-container .card:hover {
+    transform: scale(1.05) translateY(-4px); }
+
+/*Scroll functionality */
+.planes__cards-container {
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(181, 176, 172, 0.4) transparent;
+  width: 100%; }
+  .planes__cards-container .card {
+    flex: 0 0 auto;
+    scroll-snap-align: center; }
+  .planes__cards-container::-webkit-scrollbar {
+    height: 10px; }
+  .planes__cards-container::-webkit-scrollbar-thumb {
+    background: rgba(181, 176, 172, 0.4);
+    border-radius: 999px; }
+
+footer {
+  background-color: #f7931a;
+  display: flex;
+  justify-content: center;
+  padding: 40px 12px;
+  gap: 44px; }
+  footer address ul {
+    list-style: none;
+    line-height: 150%;
+    padding: 8px 4px;
+    margin-bottom: 4px;
+    font-family: DM Sans;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+    text-align: center;
+    color: white;
+    text-decoration: none; }
+
+@media screen and (min-width: 800px) {
+  #tasas__cambio-container .tables__slides-container {
+    justify-content: center;
+    padding-inline: 0; }
+
+  .planes__cards-container {
+    justify-content: center !important;
+    padding-inline: 0 !important; } }
 
 /*# sourceMappingURL=index.css.map */

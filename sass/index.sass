@@ -106,7 +106,7 @@ html
 
 %header-positioning
     position: relative
-    @include  flex-col($direction: column)
+    @include  flex-col(column)
     width: 100%
 
 .header__title-container
@@ -132,7 +132,7 @@ html
 header
     @extend %header-positioning
     padding: 8px
-    background-image: var(--linear-BG)
+    background-image: $linear-BG
 
     img[alt="Batabit logo"]
         margin-block: 40px 20px
@@ -141,12 +141,12 @@ header
         @include typography1()
 
     p
-        @include typographyp($font: DM Sans, $color: $soft-orange)
+        @include typographyp( DM Sans, $soft-orange)
 
 #tasas__cambio-container
     background-color: $off-White
     padding-block: 40px
-    @include flex-col($direction: column)
+    @include flex-col(column)
     justify-content: flex-start
     gap: 40px
 
@@ -200,7 +200,7 @@ div.tasas__title-container
         @include typography2()
 
     p
-        @include typographyp($font: DM Sans, $color: $gray)
+        @include typographyp( DM Sans, $gray)
 
 .tables__slides-container
     display: flex
@@ -211,11 +211,11 @@ div.tasas__title-container
 
 #tasas__comisiones-container,
 #tasas__monedas-container
-    @include flex-col($direction: column)
+    @include flex-col(column)
     gap: 12px
 
     h3
-        @include typography3($font: DM Sans, $color: $secondary-blue)
+        @include typography3(DM Sans, $secondary-blue)
         transform: translateX(-50px)
 
     .main__table
@@ -233,7 +233,7 @@ div.tasas__title-container
             width: 100%
 
             p
-                @include typographyp($font: DM Sans, $color: $warmer-Black)
+                @include typographyp(DM Sans, $warmer-Black)
                 background-color: var(--White)
                 padding: 8px 6px
 
@@ -261,7 +261,7 @@ div.tasas__title-container
         text-align: center
         display: inline-block
         width: 180px
-        background-color: var(--soft-blue)
+        background-color: $soft-blue
         padding: 8px 6px
         border-radius: 8px
 
@@ -271,10 +271,10 @@ div.tasas__title-container
 
     #tasas__monedas-container
         h3
-            color: var(--orange-text)
+            color: $orange-text
 
         span.table__updated
-            background-color: var(--soft-orange)
+            background-color: $soft-orange
 
         .table__column:last-child p:after
             content: url(./assets/icons/trending-down\ 1.svg)
@@ -308,3 +308,220 @@ div.tasas__title-container
     &::-webkit-scrollbar-thumb
         background: rgba(181, 176, 172, 0.4)
         border-radius: 999px
+
+#benefits__container
+    background-color: $warm-Black
+    color: var(--White)
+    @include flex-col(column)
+    position: relative
+    gap: 20px
+    padding-block: 60px 40px
+
+    img[alt="Batata"]
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: -12px
+
+.benefits__title-container
+    width: 90%
+
+    h2
+        @include typography2()
+        margin-bottom: 2rem
+
+    p
+        @include typographyp(DM Sans, rgba(128, 128, 128, 1))
+
+.benefits__cards-container
+    width: 90%
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 18px
+
+.benefits__card
+    background-color: $warmer-Black
+    box-shadow: $black-shadow
+    display: flex
+    flex-direction: column
+    padding: 20px 16px
+    gap: 12px
+    border-radius: 4px
+    width: min(100%, 800px)
+
+    img
+        width: 24px
+
+        h3
+            @include typography3()
+
+        p
+            @include typographyp(DM Sans ,rgba(128, 128, 128, 1))
+
+#conocelo__hoy
+    background-image: url(./assets/images/bitcoinbaby-girl1.png)
+    width: 100%
+    background-size: max(400px, 40vw)
+    background-color: $warmer-Black
+    background-repeat: no-repeat
+    background-position: center
+    position: relative
+    height: max(30vw, 400px)
+
+    h2
+        position: absolute
+        top: 17.4%
+        left: 50%
+        transform: translate(-50%, -50%)
+        @include typography2(DM Sans , $White)
+
+#planes
+    overflow-x: visible
+    position: relative
+    scroll-snap-align: center
+    @include flex-col(column)
+    padding-block: 40px
+    gap: 28px
+    background-color: $off-White
+
+    .planes__title-container
+        width: 90%
+
+        h2
+            @include typography2()
+            margin-bottom: 2.4rem
+
+        p
+            @include typographyp(DM Sans, $gray)
+
+.planes__cards-container
+    display: flex
+    gap: 20px
+    justify-content: flex-start
+    padding-block: 28px
+    padding-inline: 66px
+
+    .card
+        background-color: $White
+        width: 200px
+        height: 254px
+        @include flex-col(column)
+        justify-content: space-around
+        border-radius: 8px
+        box-shadow: $white-shadow
+        position: relative
+        padding: 16px 12px
+        transition: all 0.2s ease-out
+
+        h3
+            @include typography3()
+            margin-top: 18px
+
+        .price
+            font-family: Inter
+            font-weight: 500
+            font-size: 1.2rem
+            line-height: 50%
+            text-align: center
+            display: flex
+
+            span
+                font-weight: 700
+                font-size: 5.2rem
+                line-height: 90%
+
+        .save
+            font-family: Inter
+            font-weight: 500
+            font-size: 1.2rem
+            line-height: 100%
+            text-align: center
+            width: 90%
+            color: $gray
+
+        button
+            display: flex
+            align-items: center
+            gap: 6px
+            padding: 12px 16px
+            border: 2px solid $bitcoin-orange
+            border-radius: 4px
+            font-weight: 700
+            font-size: 1.4rem
+            line-height: 100%
+            text-align: center
+            color: $warm-Black
+            cursor: pointer
+
+            img
+                transition: all 0.3s ease-in-out
+
+        button:hover img
+            transform: translateX(22px)
+            opacity: 0
+
+        .recomendado__tag
+            position: absolute
+            top: -16px
+            background-color: $bitcoin-orange
+            color: $White
+            padding: 12px 8px
+            border-radius: 8px
+            font-family: Inter
+            font-weight: 700
+            font-size: 1.2rem
+            line-height: 100%
+            text-align: center
+            animation: shake 2s linear 2s infinite forwards
+
+    .card:hover
+        transform: scale(1.05) translateY(-4px)
+
+/*Scroll functionality*/
+.planes__cards-container
+    overflow-x: auto
+    overscroll-behavior-x: contain
+    scroll-snap-type: x proximity
+    scroll-padding-inline: 16px
+    scrollbar-width: thin
+    scrollbar-color: rgba(181, 176, 172, 0.4) transparent
+    width: 100%
+
+    & .card
+        flex: 0 0 auto
+        scroll-snap-align: center
+
+    &::-webkit-scrollbar
+        height: 10px
+
+    &::-webkit-scrollbar-thumb
+        background: rgba(181, 176, 172, 0.4)
+        border-radius: 999px
+
+footer
+    background-color: $bitcoin-orange
+    display: flex
+    justify-content: center
+    padding: 40px 12px
+    gap: 44px
+
+    address
+        ul
+            list-style: none
+            line-height: 150%
+
+            li>a 
+            padding: 8px 4px
+            margin-bottom: 4px
+            @include typographyp(DM Sans, $White)
+            text-decoration: none
+
+@media screen and (min-width: 800px)
+    #tasas__cambio-container .tables__slides-container
+        justify-content: center
+        padding-inline: 0
+
+    .planes__cards-container
+        justify-content: center !important
+        padding-inline: 0 !important
